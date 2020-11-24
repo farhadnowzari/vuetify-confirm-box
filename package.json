@@ -2,7 +2,7 @@
   "author": "Farhad Nowzari",
   "name": "vuetify-confirm-box",
   "description": "This plugin make the vuetify custom confirm prompts easier and fluent",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/VuetifyConfirmBox.umd.js",
   "module": "dist/VuetifyConfirmBox.esm.js",
   "unpkg": "dist/VuetifyConfirmBox.min.js",
@@ -29,7 +29,7 @@
     "url": "git+https://github.com/farhadnowzari/vuetify-confirm-box.git"
   },
   "scripts": {
-    "build": "npm run link & npm run build:umd & npm run build:es & npm run build:unpkg & npm run lint:fix",
+    "build": "npm run lint & npm run build:umd & npm run build:es & npm run build:unpkg & npm run lint:fix",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/VuetifyConfirmBox.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/VuetifyConfirmBox.esm.js",
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/VuetifyConfirmBox.min.js",
