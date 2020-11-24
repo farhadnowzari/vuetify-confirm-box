@@ -11,7 +11,7 @@ Vue.use(VuetifyConfirmBox, { vuetify }); // Where vuetify is an instance of impo
 ```
 **Note:** **Do NOT** forget to add the `vuetify-confirm-box` inside vue.config.js under `transpileDependencies`.
 ## Usage
-Now overall your app you can open the `confirmation box` with the following code from withing other `vue components`.
+Now from every vue component in your app, you can open the `confirmation box` with the following codes.
 ```
 this.$confirm.info("a message", "a title {optional}"); //shows an info box
 this.$confirm.warning("a message", "a title {optional}"); //shows a warning box
