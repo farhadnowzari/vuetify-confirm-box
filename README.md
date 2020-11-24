@@ -9,7 +9,7 @@ After the package installation is done inside plugins/vuetify.js add the followi
 ```
 Vue.use(VuetifyConfirmBox, { vuetify }); // Where vuetify is an instance of imported Vuetify vuetify.js file
 ```
-And **don't** forger to add the `vuetify-confirm-box` inside vue.config.js under `transpileDependencies`
+**Note:** **Do NOT** forget to add the `vuetify-confirm-box` inside vue.config.js under `transpileDependencies`.
 ## Usage
 Now overall your app you can open the `confirmation box` with the following code from withing other `vue components`.
 ```
