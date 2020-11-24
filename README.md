@@ -18,6 +18,13 @@ this.$confirm.warning("a message", "a title {optional}"); //shows a warning box
 this.$confirm.success("a message", "a title {optional}"); //shows a success box
 this.$confirm.error("a message", "a title {optional}"); //shows an error box
 ```
+To check whether the user confirmed or rejected you will do as follow:
+```
+this.$confirm
+    .warning("Some message")
+    .then(() => { alert("Confirmed") })
+    .catch(() => { alert("Rejected") }); // This also may throw if something inside your "then" implementation goes wrong.
+```
 **Hint:** To all the above methods, there is a third parameter that you can pass which will give you the ability to do more customizations. `options` are described in below section.
 ### Options
 
