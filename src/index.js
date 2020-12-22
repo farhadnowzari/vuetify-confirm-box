@@ -4,6 +4,10 @@ export default function install(Vue, options = {}) {
     const property = '$confirm';
     const vuetify = options.vuetify;
     delete options.vuetify;
+    const smartActions = options.smartActions ? options.smartActions : false;
+    delete options.smartActions;
+    const actionsNegativeToPositive = options.actionsNegativeToPositive ? options.actionsNegativeToPositive : false;
+    delete options.actionsNegativeToPositive;
     if(!vuetify) {
         console.warn("The module VuetifyConfirmBox needs vuetify instance. Use Vue.use(VuetifyConfirmBox, { vuetify })");
         return;
@@ -29,6 +33,10 @@ export default function install(Vue, options = {}) {
     function show(message, title = null, options = {}) {
         options.message = message;
         options.title = title;
+        if(typeof options.smartActions === 'undefined')
+            options.smartActions = smartActions;
+        if(typeof options.actionsNegativeToPositive === 'undefined')
+            options.actionsNegativeToPositive = actionsNegativeToPositive;
         return createDialogComponent(options);
     }
 

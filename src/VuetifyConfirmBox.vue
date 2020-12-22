@@ -24,7 +24,7 @@
                 <v-btn @click="choose(false)" icon right text><v-icon>mdi-close</v-icon></v-btn>
             </v-toolbar>
             <v-card-text class="body-1 text-body-1 py-3">{{ message }}</v-card-text>
-            <v-card-actions>
+            <v-card-actions v-if="actionsPositiveToNegative">
                 <v-spacer/>
                 <v-btn
                     v-if="Boolean(buttonTrueText)"
@@ -36,6 +36,19 @@
                     :color="buttonFalseColor"
                     :text="buttonFalseFlat"
                     @click="choose(false)">{{ buttonFalseText }}</v-btn>
+            </v-card-actions>
+            <v-card-actions v-else>
+                <v-spacer/>
+                <v-btn
+                    v-if="Boolean(buttonFalseText)"
+                    :color="buttonFalseColor"
+                    :text="buttonFalseFlat"
+                    @click="choose(false)">{{ buttonFalseText }}</v-btn>
+                <v-btn
+                    v-if="Boolean(buttonTrueText)"
+                    :color="buttonTrueColor"
+                    :text="buttonTrueFlat"
+                    @click="choose(true)">{{ buttonTrueText }}</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -56,6 +69,12 @@ export default {
         VBtn
     },
     computed: {
+        actionsPositiveToNegative() {
+            if(this.actionsNegativeToPositive) return false;
+            if(!this.smartActions) return true;
+            if(!this.buttonTrueText || !this.buttonFalseText) return true;
+            return this.buttonTrueText[0] <= this.buttonFalseText[0];
+        },
         icon() {
             if(this.type === 'info') {
                 return 'mdi-alert-circle-outline';
@@ -107,6 +126,7 @@ export default {
     },
     name: 'vuetify-confirm-box',
     props: {
+        actionsNegativeToPositive: Boolean,
         buttonFalseColor: {
             type: String,
             default: 'secondary'
@@ -146,6 +166,7 @@ export default {
             type: Boolean,
             default: true
         },
+        smartActions: Boolean,
         theme: {
             type: String, // dark | light
             default: 'light'

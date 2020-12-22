@@ -27,7 +27,7 @@ this.$confirm
 ```
 **Hint:** To all the above methods, there is a third parameter that you can pass which will give you the ability to do more customizations. `options` are described in below section.
 ### Options
-
+* **actionsNegativeToPositive:** You can set this option in two places either on each invoke or when configuring the vuetify plugin and adding this component to vuetify. **This option**  will let you to have the negative action button on the left side of the positive action button if any texts exist.
 * **buttonFalseColor:** Set the color for the negative action button. `default: secondary`
 * **buttonTrueColor:** Set the color for the positive action button. `default: primary`
 * **buttonFalseFlat:** Give the negative action button a `flat` style. `default: true`
@@ -39,5 +39,6 @@ this.$confirm
 * **confirmWithEnter:** If true the user can confirm the box by pressing `Enter`. `default: false`
 * **persistent:** This will prevent the user to exit the confirmation box by clicking outside of the box. `default: false`
 * **showIcon:** This will toggle the toolbar icon visibility.
+* **smartActions:** Setting `smartActions` is possible globaly and per component call like `actionsNegativeToPositive` option. **This option** will order the action buttons based on the first alphabet. so for example it will render **['Cancel', 'Ok']** like `Cancel` and `Ok` but **['Yes', 'No']** like `No` then `Yes`.
 * **theme:** Set the confirmation box theme to `dark` or `light`. `default: light`
 * **width:** Set then maximum width for the box. `default: 450`
