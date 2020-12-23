@@ -28,6 +28,7 @@ this.$confirm
 **Hint:** To all the above methods, there is a third parameter that you can pass which will give you the ability to do more customizations. `options` are described in below section.
 ### Options
 * **actionsNegativeToPositive:** You can set this option in two places either on each invoke or when configuring the vuetify plugin and adding this component to vuetify. **This option**  will let you to have the negative action button on the left side of the positive action button if any texts exist.
+* **allowHtml:** This options lets you to render html inside your message content. Take care about harmful content though ;)
 * **buttonFalseColor:** Set the color for the negative action button. `default: secondary`
 * **buttonTrueColor:** Set the color for the positive action button. `default: primary`
 * **buttonFalseFlat:** Give the negative action button a `flat` style. `default: true`

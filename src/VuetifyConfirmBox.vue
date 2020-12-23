@@ -23,7 +23,8 @@
                 <v-spacer/>
                 <v-btn @click="choose(false)" icon right text><v-icon>mdi-close</v-icon></v-btn>
             </v-toolbar>
-            <v-card-text class="body-1 text-body-1 py-3">{{ message }}</v-card-text>
+            <v-card-text class="body-1 text-body-1 py-3" v-if="!allowHtml">{{ message }}</v-card-text>
+            <v-card-text class="body-1 text-body-1 py-3" v-else v-html="message"></v-card-text>
             <v-card-actions v-if="actionsPositiveToNegative">
                 <v-spacer/>
                 <v-btn
@@ -127,6 +128,7 @@ export default {
     name: 'vuetify-confirm-box',
     props: {
         actionsNegativeToPositive: Boolean,
+        allowHtml: Boolean,
         buttonFalseColor: {
             type: String,
             default: 'secondary'
