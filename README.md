@@ -39,7 +39,8 @@ this.$confirm
 * **color:** Will set the `background-color` of the whole box.
 * **confirmWithEnter:** If true the user can confirm the box by pressing `Enter`. `default: false`
 * **persistent:** This will prevent the user to exit the confirmation box by clicking outside of the box. `default: false`
-* **showIcon:** This will toggle the toolbar icon visibility.
+* **showIcon:** This will toggle the toolbar icon visibility `default: true`
+* **showToolbar:** This will toggle the toolbar it self `default: true`
 * **smartActions:** Setting `smartActions` is possible globaly and per component call like `actionsNegativeToPositive` option. **This option** will order the action buttons based on the first alphabet. so for example it will render **['Cancel', 'Ok']** like `Cancel` and `Ok` but **['Yes', 'No']** like `No` then `Yes`.
 * **theme:** Set the confirmation box theme to `dark` or `light`. `default: light`
 * **width:** Set then maximum width for the box. `default: 450`

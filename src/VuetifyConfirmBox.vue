@@ -10,18 +10,21 @@
             :color="color" 
             :dark="themeDark"
             :light="themeLight"
+            class="pa-2"
             tile>
             <v-toolbar 
                 :class="{'border-bottom': themeLight}"
                 :color="toolbarColor"
                 :dark="themeDark"
                 :light="themeLight"
+                class="pa-1"
                 dense
-                flat>
+                flat
+                v-if="showToolbar">
                 <v-icon left :color="themeDark ? 'white' : type" v-if="showIcon">{{ icon }}</v-icon>
                 <v-toolbar-title :class="{ 'white--text': themeDark }" v-if="Boolean(title)">{{ title }}</v-toolbar-title>
                 <v-spacer/>
-                <v-btn @click="choose(false)" icon right text><v-icon>mdi-close</v-icon></v-btn>
+                <v-btn @click="choose(false)" small icon right text><v-icon>mdi-close</v-icon></v-btn>
             </v-toolbar>
             <v-card-text class="body-1 text-body-1 py-3" v-if="!allowHtml">{{ message }}</v-card-text>
             <v-card-text class="body-1 text-body-1 py-3" v-else v-html="message"></v-card-text>
@@ -165,6 +168,10 @@ export default {
         },
         persistent: Boolean,
         showIcon: {
+            type: Boolean,
+            default: true
+        },
+        showToolbar: {
             type: Boolean,
             default: true
         },
