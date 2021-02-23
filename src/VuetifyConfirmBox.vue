@@ -13,7 +13,6 @@
             class="pa-2"
             tile>
             <v-toolbar 
-                :class="{'border-bottom': themeLight}"
                 :color="toolbarColor"
                 :dark="themeDark"
                 :light="themeLight"

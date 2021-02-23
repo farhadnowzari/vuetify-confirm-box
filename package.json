@@ -2,7 +2,7 @@
   "author": "Farhad Nowzari",
   "name": "vuetify-confirm-box",
   "description": "This plugin make the vuetify custom confirm prompts easier and fluent",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist/VuetifyConfirmBox.umd.js",
   "module": "dist/VuetifyConfirmBox.esm.js",
   "unpkg": "dist/VuetifyConfirmBox.min.js",
